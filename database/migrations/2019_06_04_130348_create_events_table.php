@@ -18,7 +18,7 @@ class CreateEventsTable extends Migration
             $table->string('name')->nullable();
             $table->integer('promotion_price')->nullable();
             $table->date('end_promotion')->nullable();
-            $table->integer('id_user')->nullable();
+            $table->integer('id_user')->default(1);
 
 
             $table->timestamps();

@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('checkadmin');
@@ -30,12 +31,12 @@ Route::post('/products/edit/{id}', 'ProductController@update')->name('updateProd
 
 Route::post('/products/delete', 'ProductController@delete')->name('deleteProduct');
 
-Route::get('/indexManage','CreateManageController@index')->name('indexManage');
+Route::get('/event', 'EventController@index')->name('indexHome');
 
-Route::get('/createManage','CreateManageController@create')->name('createManage');
-Route::post('/storeManage','CreateManageController@store')->name('storeManage');
+Route::get('/events/add', 'EventController@create')->name('addEvent');
+Route::post('/events/add', 'EventController@store')->name('storeEvent');
 
-Route::get('/editManage/{id}','CreateManageController@edit')->name('editManage');
-Route::post('/updateManage/{id}','CreateManageController@update')->name('updateManage');
+Route::get('/events/edit/{id}', 'EventController@edit')->name('editEvent');
+Route::post('/events/edit/{id}', 'EventController@update')->name('updateEvent');
 
-Route::post('/destroyManage','CreateManageController@destroy')->name('destroyManage');
+Route::post('/events/delete', 'EventController@delete')->name('deleteEvent');

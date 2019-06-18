@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('unit_price')->nullable();
             $table->integer('id_event')->nullable();
             $table->integer('id_category')->nullable();
-            $table->integer('id_user')->nullable();
+            $table->integer('id_user')->default(1);
             $table->timestamps();
         });
     }
