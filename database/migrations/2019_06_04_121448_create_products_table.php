@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->integer('id_event')->nullable();
             $table->integer('id_category')->nullable();
             $table->integer('id_user')->default(1);
+            $table->integer('id_image')->default(1);
             $table->timestamps();
         });
     }
