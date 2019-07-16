@@ -78,6 +78,9 @@ Route::middleware('checkmanage')->group(function () {
 
     Route::prefix('category')->group(function () {
         Route::get('/', 'CategoryController@index')->name('indexCategory');
+
+        Route::get('/add', 'CategoryController@addCategory')->name('addCategory');
+        Route::post('/add', 'CategoryController@storeCategory')->name('storeCategory');
     });
 
     Route::get('/indexManage', 'CreateManageController@index')->name('indexManage');
