@@ -71,7 +71,7 @@ class ProductController extends Controller
             $mess = "";
             if ($product->save()) {
                 foreach ($image as $k => $v) {
-                    $images = new Image();
+                    $images = new Image();//phải tạo ảnh ở đây vì với mỗi ảnh cần lưu vào hàng, nếu k có thì nó sẽ ghi đè lên
 
                     $filename = $v->getClientOriginalName();
                     $location = $v->move(public_path() . '/images/', $filename);
