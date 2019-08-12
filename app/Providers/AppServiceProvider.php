@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use App\Cart;
 use App\Contracts\ProductRepositoryInterface;
-use App\Repositories\Eloquents\Product\ProductRepositoryIn;
+use App\Repositories\Eloquents\ProductRepositoryIn;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Session;

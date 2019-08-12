@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Eloquents\Product;
+namespace App\Repositories\Eloquents;
 
 
 use App\Category;
@@ -8,7 +8,7 @@ use App\Contracts\ProductRepositoryInterface;
 use App\Event;
 use App\Image;
 use App\Product;
-use App\Repositories\ElequentRepository;
+use App\Repositories\Eloquents\ElequentRepository;
 
 class ProductRepositoryIn extends ElequentRepository implements ProductRepositoryInterface
 {
@@ -80,6 +80,8 @@ class ProductRepositoryIn extends ElequentRepository implements ProductRepositor
 //            return false;
 //        }
 //    }
+
+
 
     public function deleteProductImage($id)
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories\Eloquents;
+namespace App\Contracts;
 
-use App\Repositories\Eloquents\RepositoryInterface;
+use App\Contracts\RepositoryInterface;
 
 interface ProductRepositoryInterface extends RepositoryInterface
 {

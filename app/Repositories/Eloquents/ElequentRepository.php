@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Eloquents;
 
-use App\Repositories\Eloquents\RepositoryInterface;
+use App\Contracts\RepositoryInterface;
 
 abstract class ElequentRepository implements RepositoryInterface
 {
