@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Session;
 use App\Bill;
 Use App\Bill_Detail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class CreateShopingCartController extends Controller
@@ -18,12 +19,19 @@ class CreateShopingCartController extends Controller
     //
     public function getAddtoCart(Request $request, $id)
     {
-        $product = Product::find($id);
-        $oldCart = Session('cart') ? Session::get('cart') : null;
-        $cart = new Cart($oldCart);
-        $cart->add($product, $id);
-        $request->session()->put('cart', $cart);
-
+        DB::transaction(function (Request $request, $id){
+            try{
+                $product = Product::find($id);
+                $oldCart = Session('cart') ? Session::get('cart') : null;
+                $cart = new Cart($oldCart);
+                $cart->add($product, $id);
+                $request->session()->put('cart', $cart);
+                DB::commit();
+            }
+            catch (\Exception $e){
+                DB::rollback();
+            }
+        });
         return redirect()->back();
     }
 
